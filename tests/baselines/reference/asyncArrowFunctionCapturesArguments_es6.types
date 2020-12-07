@@ -1,0 +1,23 @@
+=== tests/cases/conformance/async/es6/asyncArrowFunction/asyncArrowFunctionCapturesArguments_es6.ts ===
+class C {
+>C : C
+
+   method() {
+>method : () => void
+
+      function other() {}
+>other : () => void
+
+      var fn = async () => await other.apply(this, arguments);      
+>fn : () => Promise<void>
+>async () => await other.apply(this, arguments) : () => Promise<void>
+>await other.apply(this, arguments) : void
+>other.apply(this, arguments) : void
+>other.apply : { <T, U>(this: (this: T, ...argArray: any[]) => U, thisArg: T, argArray?: any): U; (this: Function, thisArg: any, argArray?: any): any; }
+>other : () => void
+>apply : { <T, U>(this: (this: T, ...argArray: any[]) => U, thisArg: T, argArray?: any): U; (this: Function, thisArg: any, argArray?: any): any; }
+>this : this
+>arguments : IArguments
+   }
+}
+
